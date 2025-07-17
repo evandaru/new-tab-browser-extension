@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Pojan Custom New Tab",
+  "version": "1.0",
+  "description": "Redirects new tab to a custom URL set by the user",
+  "chrome_url_overrides": {
+    "newtab": "redirect.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "options.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "*.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
