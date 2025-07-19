@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😎 - New Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-workspace">
+        <!-- Bagian Kiri: To-Do List -->
+        <div class="todo-container">
+            <!-- Jendela Input Catatan -->
+            <div class="input-container">
+                <form id="todo-form" class="window">
+                    <div class="title-bar">
+                        <span>NewNote.cmd</span>
+                        <div class="title-bar-controls">
+                            <span class="control-btn"></span><span class="control-btn"></span>
+                        </div>
+                    </div>
+                    <div class="window-content form-content">
+                        <input type="text" id="todo-content" placeholder="Catat & tekan Enter..." autocomplete="off"
+                            required>
+                        <button type="submit">+</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Daftar Catatan (Dalam satu window) -->
+            <div class="todo-list-area window">
+                <div class="title-bar">
+                    <span>ToDoList.txt</span>
+                    <div class="title-bar-controls">
+                        <span class="control-btn"></span><span class="control-btn"></span>
+                    </div>
+                </div>
+                <div class="window-content todo-list-content">
+                    <ul id="todo-list"></ul>
+                </div>
+            </div>
+
+            <!-- Jendela 1: Daftar Website -->
+
+
+            <!-- Jendela 2: Git Cheatsheet -->
+
+
+            <!-- Jendela 3: Welcome Message -->
+            <div class="item-container">
+                <div class="window item-window">
+                    <div class="title-bar">
+                        <span>Welcome.txt</span>
+                        <div class="title-bar-controls">
+                            <span class="control-btn"></span><span class="control-btn"></span>
+                        </div>
+                    </div>
+                    <div class="window-content note-content">
+                        <pre class="ascii-art">
+Selamat Datang!
+
+      .--.
+     |o_o |
+     |:_/ |
+    //   \ \
+   (|     | )
+  /'\_   _/`\
+  \___)=(___/
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bagian Kanan: Jam dan Pomodoro -->
+        <div class="right-container">
+            <!-- Jendela Jam -->
+            <div class="clock-container">
+                <div class="window clock-window">
+                    <div class="title-bar">
+                        <span>Clock.exe</span>
+                        <div class="title-bar-controls">
+                            <span class="control-btn"></span><span class="control-btn"></span>
+                        </div>
+                    </div>
+                    <div class="window-content">
+                        <div id="clock">00:00:00</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Jendela Pomodoro Timer -->
+            <div class="pomodoro-container">
+                <div class="window pomodoro-window">
+                    <div class="title-bar">
+                        <span>Focus.exe</span>
+                        <div class="title-bar-controls">
+                            <span class="control-btn"></span><span class="control-btn"></span>
+                        </div>
+                    </div>
+                    <div class="window-content">
+                        <div id="pomodoro-display">25:00</div>
+                        <div class="pomodoro-options">
+                            <button id="pomodoro-5min">5 Min</button>
+                            <button id="pomodoro-10min">10 Min</button>
+                            <button id="pomodoro-25min">25 Min</button>
+                        </div>
+                        <div class="pomodoro-controls">
+                            <button id="pomodoro-start">Mulai</button>
+                            <button id="pomodoro-pause">Jeda</button>
+                            <button id="pomodoro-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jendela 4: System Info -->
+            <div class="item-container">
+                <div class="window item-window">
+                    <div class="title-bar">
+                        <span>Links.url</span>
+                        <div class="title-bar-controls">
+                            <span class="control-btn"></span><span class="control-btn"></span>
+                        </div>
+                    </div>
+                    <div class="window-content note-content">
+                        <div class="links-list">
+                            <h4>Blog And Tools</h4>
+                            <ul>
+                                <li><a href="https://mini-blog-evandaru.vercel.app/" target="_blank">Blog</a></li>
+                            </ul>
+                            <h4>Portfolio</h4>
+                            <ul>
+                                <li><a href="https://fauzanhasyim.my.id" target="_blank">Porto gw</a></li>
+                                <!-- <li><a href="https://figma.com" target="_blank">Figma</a></li> -->
+                                <!-- <li><a href="https://coolors.co" target="_blank">Coolors</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Jendela 5: git cheatsheet -->
+        <div class="right-container">
+            <div class="window item-window">
+                <div class="title-bar">
+                    <span>Bingung.md</span>
+                    <div class="title-bar-controls">
+                        <span class="control-btn"></span><span class="control-btn"></span>
+                    </div>
+                </div>
+                <div class="window-content note-content">
+                    <div class="cheatsheet">
+                        <h4>Lorem</h4>
+                        <p><code>Lele</code> - makanan enak kocak</p>
+                        <!-- <p><code>git clone [url]</code> - Clone repo</p> -->
+                        <!-- <h4>Perubahan</h4> -->
+                        <!-- <p><code>git add .</code> - Tambah semua file</p> -->
+                        <!-- <p><code>git commit -m "pesan"</code></p> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Jendela 3: Welcome Message -->
+            <div class="window item-window">
+                <div class="title-bar">
+                    <span>Welcome.txt</span>
+                    <div class="title-bar-controls">
+                        <span class="control-btn"></span><span class="control-btn"></span>
+                    </div>
+                </div>
+                <div class="window-content note-content">
+                    <img src="lele.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

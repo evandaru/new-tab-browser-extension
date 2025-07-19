@@ -1,0 +1,291 @@
+:root {
+    --bg-color: #B2D8D8;
+    --panel-bg: #FDF6E3;
+    --text-color: #000000;
+    --border-color: #000000;
+    --shadow-color: #000000;
+    --done-bg: #EAE3D4;
+    --done-opacity: 0.6;
+    --font-main: 'VT323', monospace;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1A202C;
+        --panel-bg: #2D3748;
+        --text-color: #FDF6E3;
+        --border-color: #FDF6E3;
+        --shadow-color: #1A202C;
+        --done-bg: #4A5568;
+        --done-opacity: 0.5;
+    }
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s;
+}
+
+.main-workspace {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-list-area {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    /* overflow-y: auto; is now on child */
+}
+
+.todo-list-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px 20px;
+}
+
+.window {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-color);
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.title-bar-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control-btn {
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    transition: border-color 0.3s;
+}
+
+.window-content {
+    padding: 20px;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+}
+
+#clock {
+    font-size: 40px;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.clock-window {
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+#todo-form {
+    width: 100%;
+}
+
+.form-content {
+    padding: 0;
+    display: flex;
+}
+
+#todo-content {
+    flex-grow: 1;
+    padding: 12px 15px;
+    font-size: 20px;
+    font-family: var(--font-main);
+    border: none;
+    border-right: 2px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+#todo-form button {
+    flex-shrink: 0;
+    width: 50px;
+    font-size: 28px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.pomodoro-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pomodoro-window {
+    width: 100%;
+}
+
+#pomodoro-display {
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.pomodoro-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pomodoro-options button {
+    font-family: var(--font-main);
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pomodoro-options button:active {
+    background-color: var(--done-bg);
+}
+
+.pomodoro-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pomodoro-controls button {
+    font-family: var(--font-main);
+    font-size: 20px;
+    padding: 8px 16px;
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pomodoro-controls button:active {
+    background-color: var(--done-bg);
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item p {
+    font-size: 18px;
+    line-height: 1.3;
+    word-break: break-word;
+    color: var(--text-color);
+    transition: color 0.3s, opacity 0.3s;
+    margin: 0;
+    padding-right: 10px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+    opacity: 0.7;
+    color: var(--text-color);
+    transition: opacity 0.2s, color 0.3s;
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.todo-item.done p {
+    text-decoration: line-through;
+    opacity: var(--done-opacity);
+}
+
+@media (max-width: 900px) {
+    .main-workspace {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .todo-container,
+    .right-container {
+        gap: 15px;
+    }
+
+    .todo-list-area {
+        max-height: none;
+    }
+}
+
+.item-container {
+    display: flex;
+    justify-content: center;
+}
+
+.item-window {
+    width: 100%;
+}
